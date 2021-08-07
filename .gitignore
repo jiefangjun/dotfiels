@@ -3,6 +3,7 @@
 
 # bashrc vimrc zshrc
 !.*rc
+.bashrc
 
 # tmuxconf
 !.*conf
