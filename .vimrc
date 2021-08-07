@@ -29,7 +29,9 @@ set expandtab 		      " tab 转空格
 set softtabstop=4  	      " tab 转空格数	
 filetype off                  " required
 filetype indent on
-set autoindent
+set smartindent "智能缩进"
+set cindent "C语言风格缩进"
+set autoindent "自动缩进"
 syntax enable		      " 开启语法高亮功能
 colorscheme desert
 syntax on                     " 允许用指定语法高亮配色方案替换默认方案
