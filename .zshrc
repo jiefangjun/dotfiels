@@ -53,3 +53,6 @@ select-word-style bash
 export WORDCHARS='.-'
 
 alias time='\time -f %e'
+alias p='export http_proxy=socks5://win:10808 && export https_proxy=socks5://win:10808'
+alias hp='export http_proxy=http://win:10809 && export https_proxy=$http_proxy'
+alias np='unset http_proxy && unset https_proxy'
