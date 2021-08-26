@@ -1,6 +1,7 @@
 export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTFILE=~/.histfile
+export PATH=$PATH:~/.local/bin
 # bash 调试显示行号
 export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]}: '
 setopt APPEND_HISTORY
