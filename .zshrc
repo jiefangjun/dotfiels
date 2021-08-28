@@ -1,7 +1,12 @@
-export HISTSIZE=100000
-export SAVEHIST=100000
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 export HISTFILE=~/.histfile
 export PATH=$PATH:~/.local/bin
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt APPEND_HISTORY
+
 # bash 调试显示行号
 export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]}: '
 setopt APPEND_HISTORY
@@ -9,9 +14,6 @@ setopt APPEND_HISTORY
 # 自带补全
 autoload -U compinit
 compinit
-
-# 去重
-setopt HIST_IGNORE_DUPS
 
 # allow comments in interactive shells (like Bash does)
 setopt INTERACTIVE_COMMENTS
@@ -45,7 +47,6 @@ zinit load agkozak/zsh-z
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias pass='openssl rand -base64 16 >> pass'
 bindkey \^U backward-kill-line
 
 autoload -U select-word-style
