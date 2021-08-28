@@ -3,6 +3,7 @@
 
 # bashrc vimrc zshrc
 !.*rc
+!.p10k.zsh
 .bashrc
 
 # tmuxconf
