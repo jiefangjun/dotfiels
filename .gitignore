@@ -4,6 +4,7 @@
 # bashrc vimrc zshrc
 !.*rc
 !.p10k.zsh
+!.zprofile
 .bashrc
 
 # tmuxconf
