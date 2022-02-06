@@ -1,7 +1,7 @@
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 export HISTFILE=~/.histfile
-export PATH=$PATH:~/.local/bin
+export JAVA_HOME=/usr/lib/jvm/default
 setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
