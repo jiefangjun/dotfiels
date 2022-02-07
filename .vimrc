@@ -48,6 +48,8 @@ set smartcase
 " + 指 X11 中的 CLIPBOARD 选区，即系统剪切板。在桌面系统中可按 Ctrl+V 粘贴。
 set clipboard=unnamed
 " above "* -> ""
+" 开关粘贴模式
+set pastetoggle=<F2>
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
