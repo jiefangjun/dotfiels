@@ -27,19 +27,19 @@ fi
 
 
 ### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d $ZINIT_HOME ]]; then
+  sh -c "$(curl -fsSL https://git.io/zinit-install)"
 fi
 
-source "$HOME/.zinit/bin/zinit.zsh"
+source "${ZINIT_HOME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit light zsh-users/zsh-syntax-highlighting
+# zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-zinit load zdharma/history-search-multi-word
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit load zdharma-continuum/history-search-multi-word
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit load agkozak/zsh-z
 ### End of Zinit's installer chunk
@@ -57,3 +57,11 @@ alias time='\time -f %e'
 alias p='export http_proxy=socks5://win:10808 && export https_proxy=socks5://win:10808'
 alias hp='export http_proxy=http://win:10809 && export https_proxy=$http_proxy'
 alias np='unset http_proxy && unset https_proxy'
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
